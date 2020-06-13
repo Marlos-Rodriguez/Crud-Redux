@@ -41,11 +41,15 @@ const Productos = () => {
           </tr>
         </thead>
         <tbody>
-          {productos.length === 0
-            ? "No hay productos"
-            : productos.map((producto) => (
-                <Producto key={producto.id} producto={producto} />
-              ))}
+          {productos.length > 0 ? (
+            productos.map((producto) => (
+              <Producto key={producto.id} producto={producto} />
+            ))
+          ) : (
+            <tr>
+              <td>No hay Productos</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </Fragment>
